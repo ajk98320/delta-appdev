@@ -1,0 +1,116 @@
+package com.example.arjunanilkumar.myapp1;
+
+import android.content.pm.ActivityInfo;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Button;
+import android.graphics.Color;
+
+public class MainActivity extends AppCompatActivity {
+    RelativeLayout r2;
+    public int i=0;
+    public int j=0;
+    public int k=0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final TextView t1 = (TextView) findViewById(R.id.textView7);
+
+        Button b1 =(Button)findViewById(R.id.button11);
+        b1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // TODO Auto-generated method stub
+                r2.setBackgroundColor(Color.rgb(0, 0, 0));
+                i=0;j=0;k=0;
+                t1.setText("#000000");
+            }
+        });
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        r2 =(RelativeLayout)findViewById(R.id.Rl);
+        goku1();
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
+    public void increment1(View view){
+        final TextView t1 = (TextView) findViewById(R.id.textView7);
+
+
+        if (i>230){
+            int l=0;
+            switch (i = l) {
+            }
+
+        }
+        t1.setText(Integer.toString(i));
+        i=i+20;
+        goku1();
+    }
+    public void increment2(View view){
+        final TextView t1 = (TextView) findViewById(R.id.textView7);
+        if (j>230){
+            int l=0;
+            switch (j = l) {
+            }
+
+        }
+        t1.setText(Integer.toString(j));
+        j=j+20;
+        goku1();
+    }
+    public void increment3(View view){
+        final TextView t1 = (TextView) findViewById(R.id.textView7);
+        if (k>230){
+            int l=0;
+            switch (k = l) {
+            }
+
+        }
+        t1.setText(Integer.toString(k));
+        k=k+20;
+        goku1();
+    }
+    public void goku1(){
+        r2.setBackgroundColor(Color.rgb(i, j, k));
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+}
